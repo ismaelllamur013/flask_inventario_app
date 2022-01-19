@@ -1,0 +1,70 @@
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+    <p>{{ message }}</p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<form action='/add_contact' method='POST'>
+    <input type='text' name='id_num' placeholder='Número de identificación de inventario'>
+    <input type='text' name='type' placeholder='Tipo de equipo/artículo'>
+    <input type='text' name='descr' placeholder='Breve descripción del equipo/artículo'>
+    <input type='text' name='fabric' placeholder='Fabricante' >
+    <input type='text' name='model' placeholder='Modelo / número de catálogo'>
+    <input type='text' name='n_serie' placeholder='Número de serie'>
+    <input type='text' name='ubic' placeholder='Ubicación física en el centro de atención sanitaria' >
+    <input type='text' name='estado' placeholder='Estado / estatus operativo'>
+    <input type='text' name='alimen' placeholder='Alimentación eléctrica' >
+    <input type='text' name='requis' placeholder='Requisitos de funcionamiento y mantenimiento' >
+    <input type='text' name='fecha' placeholder='Fecha inicial de registro en el inventario y de actualización' >
+    <input type='text' name='prov_mant' placeholder='Proveedor del servicio de mantenimiento' >
+    <input type='text' name='prov_com' placeholder='Proveedor de compra'>
+    <button type='submit'>
+        Save
+    </button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <td>Número de identificación de inventario</td>
+            <td>Tipo de equipo/artículo</td>
+            <td>Breve descripción del equipo/artículo</td>
+            <td>Fabricante</td>
+            <td>Modelo / número de catálogo</td>
+            <td>Número de serie</td>
+            <td>Ubicación física en el centro de atención sanitaria</td>
+            <td>Estado / estatus operativo</td>
+            <td>Alimentación eléctrica</td>
+            <td>Requisitos de funcionamiento y mantenimient</td>
+            <td>Fecha inicial de registro en el inventario y de actualización</td>
+            <td>Proveedor del servicio de mantenimiento</td>
+            <td>Proveedor de compra</td>
+            <td>Operations</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.1 }}</td>
+                <td>{{ contact.2 }}</td>
+                <td>{{ contact.3 }}</td>
+                <td>{{ contact.4 }}</td>
+                <td>{{ contact.5 }}</td>
+                <td>{{ contact.6 }}</td>
+                <td>{{ contact.7 }}</td>
+                <td>{{ contact.8 }}</td>
+                <td>{{ contact.9 }}</td>
+                <td>{{ contact.10 }}</td>
+                <td>{{ contact.11 }}</td>
+                <td>{{ contact.12 }}</td>
+                <td>{{ contact.13 }}</td>
+                <td> 
+                    <a href="/edit/{{contact.0}}">Edit</a>
+                    <a href="/delete/{{contact.0}}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
