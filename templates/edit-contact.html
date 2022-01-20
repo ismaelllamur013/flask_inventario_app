@@ -1,19 +1,57 @@
-<form action='/update/{{contact.0}}' method='POST'>
-    <input type='text' name='id_num' placeholder='Número de identificación de inventario' value='{{contact.1}}'>
-    <input type='text' name='type' placeholder='Tipo de equipo/artículo' value='{{contact.2}}'>
-    <input type='text' name='descr' placeholder='Breve descripción del equipo/artículo' value='{{contact.3}}'>
-    <input type='text' name='fabric' placeholder='Fabricante' value='{{contact.4}}'>
-    <input type='text' name='model' placeholder='Modelo / número de catálogo' value='{{contact.5}}'>
-    <input type='text' name='n_serie' placeholder='Número de serie' value='{{contact.6}}'>
-    <input type='text' name='ubic' placeholder='Ubicación física en el centro de atención sanitaria' value='{{contact.7}}'>
-    <input type='text' name='estado' placeholder='Estado / estatus operativo' value='{{contact.8}}'>
-    <input type='text' name='alimen' placeholder='Alimentación eléctrica' value='{{contact.9}}'>
-    <input type='text' name='requis' placeholder='Requisitos de funcionamiento y mantenimiento' value='{{contact.10}}'>
-    <input type='text' name='fecha' placeholder='Fecha inicial de registro en el inventario y de actualización' value='{{contact.11}}'>
-    <input type='text' name='prov_mant' placeholder='Proveedor del servicio de mantenimiento' value='{{contact.12}}'>
-    <input type='text' name='prov_com' placeholder='Proveedor de compra' value='{{contact.13}}'>
+{% extends 'layout.html' %}
 
-    <button type='submit'>
-        Save
-    </button>
-</form>
+{% block body %}
+
+<div class="col-md-4 offset-md-4">
+    <form action='/update/{{contact.0}}' method='POST'>
+        <div class="form-grop">
+            <input type='text' name='id_num' placeholder='Número de identificación de inventario' value='{{contact.1}}' class="form-control">
+        </div>
+        <div class="form-group">
+            <input type='text' name='type' placeholder='Tipo de equipo/artículo' value='{{contact.2}}' class="form-control">
+        </div>
+        <div class="form-group">
+            <input type='text' name='descr' placeholder='Breve descripción del equipo/artículo' value='{{contact.3}}' class="form-control">
+        </div>
+        <div class="form-group">
+            <input type='text' name='fabric' placeholder='Fabricante' value='{{contact.4}}' class="form-control">
+        </div>
+        <div class="form-group">
+            <input type='text' name='model' placeholder='Modelo / número de catálogo' value='{{contact.5}}' class="form-control">
+        </div>
+        <div class="form-group">
+            <input type='text' name='n_serie' placeholder='Número de serie' value='{{contact.6}}' class="form-control">
+        </div>
+        <div class="form-group">
+            <input type='text' name='ubic' placeholder='Ubicación física en el centro de atención sanitaria' value='{{contact.7}}' class="form-control">
+        </div>
+        <div class="form-group">
+            <input type='text' name='estado' placeholder='Estado / estatus operativo' value='{{contact.8}}' class="form-control">
+        </div>
+        <div class="form-group">
+            <input type='text' name='alimen' placeholder='Alimentación eléctrica' value='{{contact.9}}' class="form-control">
+        </div>
+        <div class="form-group">
+            <input type='text' name='requis' placeholder='Requisitos de funcionamiento y mantenimiento' value='{{contact.10}}' class="form-control">
+        </div>
+        <div class="form-group">
+            <input type='text' name='fecha' placeholder='Fecha inicial de registro en el inventario y de actualización' value='{{contact.11}}' class="form-control">
+        </div>
+        <div class="form-group">
+            <input type='text' name='prov_mant' placeholder='Proveedor del servicio de mantenimiento' value='{{contact.12}}' class="form-control">
+        </div>
+        <div class="form-group">
+            <input type='text' name='prov_com' placeholder='Proveedor de compra' value='{{contact.13}}' class="form-control">
+        </div>
+        <div class="form-grop">
+            <button type='submit' class='btn btn-success btn-block'>
+                Save
+            </button>
+        </div>
+        
+    </form>
+</div>
+
+
+
+{% endblock%}
